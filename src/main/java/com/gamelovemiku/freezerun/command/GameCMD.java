@@ -92,6 +92,11 @@ public class GameCMD implements CommandExecutor {
                 p.sendMessage(ChatColor.GREEN + "Set speed to " + args[1]);
                 return true;
             }
+            if(args[0].equalsIgnoreCase("save")) {
+                new ArenaLoader().saveArenas();
+                p.sendMessage(ChatColor.GREEN + "Saved");
+                return true;
+            }
             if(args[0].equalsIgnoreCase("start")) {
                 arenaManager.startOver(args[1]);
                 return true;
@@ -103,6 +108,16 @@ public class GameCMD implements CommandExecutor {
             if(args[0].equalsIgnoreCase("delete")) {
                 arenaManager.delete(args[1]);
                 sender.sendMessage(ChatColor.GOLD + "Arena removed.");
+                return true;
+            }
+            if(args[0].equalsIgnoreCase("setid")) {
+                arenaManager.setId(args[1], args[2]);
+                sender.sendMessage(ChatColor.GOLD + "Id set.");
+                return true;
+            }
+            if(args[0].equalsIgnoreCase("setname")) {
+                arenaManager.setName(args[1], args[2]);
+                sender.sendMessage(ChatColor.GOLD + "Name set.");
                 return true;
             }
             if(args[0].equalsIgnoreCase("setspawn")) {
@@ -160,6 +175,10 @@ public class GameCMD implements CommandExecutor {
             }
             if(args[0].equalsIgnoreCase("total")) {
                 sender.sendMessage(ChatColor.GOLD + "Total of all arena: " + arenaManager.totalArena());
+                return true;
+            }
+            if(args[0].equalsIgnoreCase("mygame")) {
+                p.sendMessage("You playing in " + new PlayerManager().findArena(p.getName()).getName());
                 return true;
             }
             sender.sendMessage(ChatColor.RED + "Unknown subcommand.");

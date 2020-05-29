@@ -10,7 +10,6 @@ import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.Sound;
-import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
 import org.bukkit.scheduler.BukkitRunnable;
@@ -20,27 +19,17 @@ import java.util.HashMap;
 public class ArenaManager implements Listener {
 
     private static HashMap<String, Arena> arenaList = new HashMap<String, Arena>();
-    private int startCountdown = 60;
-    public static int gametime = 180;
 
     public static HashMap<String, Arena> getArenaList() {
         return arenaList;
     }
 
-    public static int getGametime() {
-        return gametime;
-    }
-
-    public static void setGametime(int gametime) {
-        ArenaManager.gametime = gametime;
-    }
-
-    public String create(String name) {
-        if(arenaList.containsKey(name) == false) {
+    public String create(String id) {
+        if(arenaList.containsKey(id) == false) {
             Arena arena = new Arena();
-            arenaList.put(name, arena);
-            arena.setName(name);
-            return name;
+            arenaList.put(id, arena);
+            arena.setId(id);
+            return id;
         }
         return "ERROR";
     }
@@ -49,6 +38,9 @@ public class ArenaManager implements Listener {
         if(arenaList.get(arenaId).getState().equals(ArenaState.WAITING)) {
 
             Arena arena = arenaList.get(arenaId);
+            arena.setGametime(180);
+            arena.setLobbytime(45);
+
             FreezeRunHelper helper = new FreezeRunHelper();
 
             arena.setState(ArenaState.WAITING);
@@ -56,10 +48,10 @@ public class ArenaManager implements Listener {
             new BukkitRunnable() {
                 @Override
                 public void run() {
-                    if(startCountdown > 0) {
+                    if(arena.getLobbytime() > 0) {
                         arena.getDummyplayers().forEach(uuid -> {
                             Player player = Bukkit.getPlayer(uuid);
-                            player.sendMessage(helper.formatInGameColor("&b&lFreezeRun> &7The game will starting in &e" + startCountdown + " seconds. &a(" + arena.getDummyplayers().size() + "/Unlimited)"));
+                            player.sendMessage(helper.formatInGameColor("&b&lFreezeRun> &7The game will starting in &e" + arena.getLobbytime() + " seconds. &a(" + arena.getDummyplayers().size() + "/Unlimited)"));
                             player.playSound(player.getLocation(), Sound.BLOCK_DISPENSER_FAIL, 1,1);
                         });
                     } else {
@@ -74,9 +66,9 @@ public class ArenaManager implements Listener {
 
                         this.cancel();
                         startGame(arenaId);
-                        startCountdown = 30;
+                        arena.setLobbytime(45);;
                     }
-                    startCountdown--;
+                    arena.setLobbytime(arena.getLobbytime()-1);
                 }
             }.runTaskTimer(FreezeRun.getInstance(), 0, 20);
         }
@@ -94,10 +86,10 @@ public class ArenaManager implements Listener {
         new BukkitRunnable() {
             @Override
             public void run() {
-                if(gametime > 0) {
+                if(arena.getGametime() > 0) {
                     arena.getDummyplayers().forEach(uuid -> {
                         Player player = Bukkit.getPlayer(uuid);
-                        helper.sendActionBar(player, helper.formatInGameColor("&7The game will ending in &e" + gametime + " seconds."));
+                        helper.sendActionBar(player, helper.formatInGameColor("&7The game will ending in &e" + arena.getGametime() + " seconds."));
                     });
                 } else {
                     arena.setState(ArenaState.FINISHING);
@@ -119,9 +111,9 @@ public class ArenaManager implements Listener {
                     this.cancel();
                     Bukkit.getPluginManager().callEvent(new GameEndEvent(arena));
                     arena.setState(ArenaState.WAITING);
-                    gametime = 120;
+                    arena.setGametime(120);
                 }
-                gametime--;
+                arena.setGametime(arena.getGametime()-1);
             }
         }.runTaskTimer(FreezeRun.getInstance(), 0, 20);
     }
@@ -132,7 +124,7 @@ public class ArenaManager implements Listener {
             spawnToLobby(player);
             Bukkit.getPluginManager().callEvent(new PlayerJoinArenaEvent(Bukkit.getPlayer(player), arenaList.get(arenaId)));
         } else {
-            //Bukkit.broadcastMessage(new FreezeRunHelper().formatInGameColor("&b&lFreezeRun> &fYou already joined to this arena!"));
+            Bukkit.getPlayer(player).sendMessage(ChatColor.RED + "This lobby is already started.");
         }
         return;
     }
@@ -141,7 +133,7 @@ public class ArenaManager implements Listener {
         if(arenaList.get(arenaId).getDummyplayers().contains(player)) {
             if(arenaList.get(arenaId).getDummyplayers().remove(player)) {
                 removeDummyPlayer(player, arenaId);
-                Bukkit.getPluginManager().callEvent(new PlayerLeaveArenaEvent(Bukkit.getPlayer(player)));
+                Bukkit.getPluginManager().callEvent(new PlayerLeaveArenaEvent(Bukkit.getPlayer(player), arenaList.get(arenaId)));
                 return;
             }
         } else {
@@ -161,7 +153,6 @@ public class ArenaManager implements Listener {
             arenaList.get(arenaId).getDummyplayers().add(name);
             Bukkit.broadcastMessage("Added player: " + name + " to " + arenaId + "!");
         } else {
-            //Bukkit.broadcastMessage(ChatColor.RED + "You already join to this arena #" + arenaId + "!");
             Bukkit.getPlayer(name).sendMessage(new FreezeRunHelper().formatInGameColor("&b&lFreezeRun> &cYou already joined to this arena! &8--- &a" + arenaId + "!"));
         }
 
@@ -181,15 +172,27 @@ public class ArenaManager implements Listener {
 
     public void listDummyPlayer(String arenaId) {
         arenaList.get(arenaId).getDummyplayers();
-        Bukkit.broadcastMessage(ChatColor.AQUA + "List of players on this area: " + arenaId + " ---> TOTAL=" + arenaList.get(arenaId).getDummyplayers().size());
+        Bukkit.broadcastMessage(ChatColor.AQUA + "================================================");
+        Bukkit.broadcastMessage(ChatColor.AQUA + "Arena Info |||||||||||||" + arenaId + " ---> TOTAL=" + arenaList.get(arenaId).getDummyplayers().size());
+        Bukkit.broadcastMessage(ChatColor.RED + "Arena Id: " + arenaList.get(arenaId).getId());
         Bukkit.broadcastMessage(ChatColor.AQUA + "Arena Name: " + arenaList.get(arenaId).getName());
         Bukkit.broadcastMessage(ChatColor.AQUA + "Arena status: " + arenaList.get(arenaId).getState().toString());
-        Bukkit.broadcastMessage(ChatColor.AQUA + "Arena Lobby Location: " + arenaList.get(arenaId).getLobby().toString());
-        Bukkit.broadcastMessage(ChatColor.AQUA + "Arena Spawn Location: " + arenaList.get(arenaId).getSpawn().toString());
+        Bukkit.broadcastMessage(ChatColor.YELLOW + "Arena lobbytime: " + arenaList.get(arenaId).getLobbytime());
+        Bukkit.broadcastMessage(ChatColor.YELLOW + "Arena gametime: " + arenaList.get(arenaId).getGametime());
+        Bukkit.broadcastMessage(ChatColor.GRAY + "Arena Lobby Location: " + arenaList.get(arenaId).getLobby().toString());
+        Bukkit.broadcastMessage(ChatColor.GRAY + "Arena Spawn Location: " + arenaList.get(arenaId).getSpawn().toString());
         for (String player : arenaList.get(arenaId).getDummyplayers()) {
             Bukkit.broadcastMessage("------ "+ ChatColor.GREEN + player);
         }
         return;
+    }
+
+    public void setId(String arenaId, String id) {
+        arenaList.get(arenaId).setId(id);
+    }
+
+    public void setName(String arenaId, String name) {
+        arenaList.get(arenaId).setName(name);
     }
 
     public void setState(String arenaId, ArenaState state) {
@@ -236,21 +239,24 @@ public class ArenaManager implements Listener {
         return arenaList.get(arenaId).getSpawn();
     }
 
-    public void addPlayer(Player p, String arenaId) {
-        arenaList.get(arenaId).getPlayers().add(p.getUniqueId());
-        //p.sendMessage("You are in arena: " + arenaId);
+    public void sendChatToAllPlayerInArena(Arena arena, String msg) {
+        arena.getDummyplayers().forEach(uuid -> {
+            Player player = Bukkit.getPlayer(uuid);
+            player.sendMessage(msg);
+        });
         return;
     }
 
-    public void removePlayer(Player p, String arenaId) {
-        arenaList.get(arenaId).getPlayers().remove(p.getUniqueId());
-        //p.sendMessage("You are leave from arena: " + arenaId);
+    public void sendTitleToAllPlayerInArena(Arena arena, String title, String subtitle) {
+        arena.getDummyplayers().forEach(uuid -> {
+            Player player = Bukkit.getPlayer(uuid);
+            player.sendTitle(title, subtitle, 15, 30, 15);
+        });
         return;
     }
 
     public Integer totalArena() {
         return arenaList.size();
     }
-
 
 }

@@ -2,14 +2,19 @@
 
 msg: TEST FROM CONFIGGGGGGGGGG
 arenas:
-  test1:
-    name: test1_arena
+  test1_arena:
+    id: test1_arena
+    name: FREEZE01
+    lobbytime: 60
+    gametime: 180
     locations:
       lobby:
+        world: world
         x: -8
         y: 70
         z: 7
       spawn:
+        world: world
         x: -5
         y: 70
         z: 9

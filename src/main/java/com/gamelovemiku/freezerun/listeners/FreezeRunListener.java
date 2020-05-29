@@ -104,11 +104,11 @@ public class FreezeRunListener implements Listener {
 
                 arena.getDummyplayers().forEach(name -> {
                     Player player = Bukkit.getPlayer(name);
-                    player.sendMessage(helper.formatInGameColor("&e&l" + damager.getName() + "  IS FREEZING " + countFreezed + "/" + (ArenaManager.getArenaList().get("test1_arena").getDummyplayers().size()-1)));
+                    player.sendMessage(helper.formatInGameColor("&e&l" + damager.getName() + " IS FREEZING " + countFreezed + "/" + (ArenaManager.getArenaList().get("test1_arena").getDummyplayers().size()-1)));
                 });
 
                 if(arena.getDummyplayers().size()-1 == countFreezed) {
-                    ArenaManager.setGametime(1);
+                    arena.setGametime(180);
                 }
 
                 countFreezed = 0;
@@ -160,7 +160,7 @@ public class FreezeRunListener implements Listener {
                         player.setFoodLevel(20);
 
                         if(state.isHost()) {
-                            player.sendMessage(helper.formatInGameColor("&b&lFreezeRun> &aYou are host! FREEZE OTHER PLAYER!"));
+                            player.sendMessage(helper.formatInGameColor("&b&lFreezeRun> &c&lYou are it! FREEZE OTHER PLAYER!"));
                             player.sendTitle(helper.formatInGameColor("&c&lTHE HOST"), helper.formatInGameColor("&eCatch other player and freeze them!"), 15, 35, 15);
                             player.setWalkSpeed(0.6f);
                         } else {
@@ -183,7 +183,6 @@ public class FreezeRunListener implements Listener {
     @EventHandler
     public void onEnd(GameEndEvent event) {
         Arena arena = event.getArena();
-        Random rnd = new Random();
 
         arena.getDummyplayers().forEach(uuid -> {
             Player player = Bukkit.getPlayer(uuid);
@@ -197,14 +196,16 @@ public class FreezeRunListener implements Listener {
     @EventHandler
     public void onJoinArena(PlayerJoinArenaEvent event) {
         event.getPlayer().sendMessage("You joined the arena!");
+        new ArenaManager().sendChatToAllPlayerInArena(event.getArena(),new FreezeRunHelper().formatInGameColor("&e# " + event.getPlayer().getName() + " joined the lobby (" + event.getArena().getDummyplayers().size() + "/8)"));
         if(!PlayerManager.getPlayerState().containsKey(event.getPlayer().getUniqueId())) {
-            PlayerManager.getPlayerState().put(event.getPlayer().getUniqueId(), new PlayerState(event.getPlayer().getUniqueId(), event.getArena(), true, false, false));
+            PlayerManager.getPlayerState().put(event.getPlayer().getUniqueId(), new PlayerState(event.getPlayer().getUniqueId(), event.getArena(), false, false));
         }
     }
 
     @EventHandler
     public void onLeaveArena(PlayerLeaveArenaEvent event) {
         event.getPlayer().sendMessage("You leaved the arena!");
+        new ArenaManager().sendChatToAllPlayerInArena(event.getArena(),new FreezeRunHelper().formatInGameColor("&e# " + event.getPlayer().getName() + " leaved the lobby (" + event.getArena().getDummyplayers().size() + "/8)"));
         if(PlayerManager.getPlayerState().containsKey(event.getPlayer().getUniqueId())) {
             PlayerManager.getPlayerState().remove(event.getPlayer().getUniqueId());
         }

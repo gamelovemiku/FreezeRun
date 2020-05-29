@@ -8,16 +8,14 @@ import java.util.UUID;
 public class PlayerState implements Listener {
 
     private UUID uuid;
-    private boolean inGame;
     private boolean isHost;
     private boolean isFreezing;
 
-    private Arena arena;
+    private Arena arena = null;
 
-    public PlayerState(UUID uuid, Arena arena, boolean ingame, boolean isHost, boolean isFreezing){
+    public PlayerState(UUID uuid, Arena arena, boolean isHost, boolean isFreezing){
         this.setUuid(uuid);
         this.setArena(arena);
-        this.setInGame(ingame);
         this.setHost(isHost);
         this.setFreezing(isFreezing);
     }
@@ -36,14 +34,6 @@ public class PlayerState implements Listener {
 
     public void setArena(Arena arena) {
         this.arena = arena;
-    }
-
-    public boolean isInGame() {
-        return inGame;
-    }
-
-    public void setInGame(boolean inGame) {
-        this.inGame = inGame;
     }
 
     public boolean isHost() {

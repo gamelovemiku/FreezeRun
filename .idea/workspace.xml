@@ -6,7 +6,32 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2644dd5b-a00c-4d7a-a828-8d75ca8d6158" name="Default Changelist" comment="" />
+    <list default="true" id="2644dd5b-a00c-4d7a-a828-8d75ca8d6158" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gamelovemiku/freezerun/arena/Arena.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gamelovemiku/freezerun/arena/Arena.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gamelovemiku/freezerun/arena/ArenaLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gamelovemiku/freezerun/arena/ArenaLoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gamelovemiku/freezerun/arena/ArenaManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gamelovemiku/freezerun/arena/ArenaManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gamelovemiku/freezerun/command/GameCMD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gamelovemiku/freezerun/command/GameCMD.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gamelovemiku/freezerun/events/PlayerLeaveArenaEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gamelovemiku/freezerun/events/PlayerLeaveArenaEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gamelovemiku/freezerun/listeners/FreezeRunListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gamelovemiku/freezerun/listeners/FreezeRunListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gamelovemiku/freezerun/player/PlayerManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gamelovemiku/freezerun/player/PlayerManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gamelovemiku/freezerun/player/PlayerState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gamelovemiku/freezerun/player/PlayerState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/config.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gamelovemiku/freezerun/arena/Arena.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gamelovemiku/freezerun/arena/Arena.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gamelovemiku/freezerun/arena/ArenaLoader.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gamelovemiku/freezerun/arena/ArenaLoader.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gamelovemiku/freezerun/arena/ArenaManager$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gamelovemiku/freezerun/arena/ArenaManager$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gamelovemiku/freezerun/arena/ArenaManager$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gamelovemiku/freezerun/arena/ArenaManager$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gamelovemiku/freezerun/arena/ArenaManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gamelovemiku/freezerun/arena/ArenaManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gamelovemiku/freezerun/command/GameCMD.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gamelovemiku/freezerun/command/GameCMD.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gamelovemiku/freezerun/events/PlayerLeaveArenaEvent.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gamelovemiku/freezerun/events/PlayerLeaveArenaEvent.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gamelovemiku/freezerun/listeners/FreezeRunListener$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gamelovemiku/freezerun/listeners/FreezeRunListener$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gamelovemiku/freezerun/listeners/FreezeRunListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gamelovemiku/freezerun/listeners/FreezeRunListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gamelovemiku/freezerun/listeners/TestListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gamelovemiku/freezerun/listeners/TestListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gamelovemiku/freezerun/player/PlayerManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gamelovemiku/freezerun/player/PlayerManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gamelovemiku/freezerun/player/PlayerState.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gamelovemiku/freezerun/player/PlayerState.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/config.yml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,10 +43,13 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Enum" />
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MavenImportPreferences">
     <option name="importingSettings">
@@ -36,6 +64,7 @@
     <option name="version" value="1" />
   </component>
   <component name="ProjectId" id="1cV1mmowfVXXPTWZaj660H9GMbM" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -43,6 +72,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../FreezeRun-dev v1.15.2/plugins" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
@@ -138,10 +168,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="224" key="#com.intellij.ide.macro.MacrosDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1590600802308" />
-    <state x="765" y="220" key="#com.intellij.ide.util.MemberChooser" timestamp="1590726363767">
+    <state x="765" y="220" key="#com.intellij.ide.util.MemberChooser" timestamp="1590781181219">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="765" y="220" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1590726363767" />
+    <state x="765" y="220" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1590781181219" />
     <state x="676" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1590719432101">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -154,46 +184,46 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1590602703715" />
-    <state width="1877" height="228" key="GridCell.Tab.0.bottom" timestamp="1590778898771">
+    <state width="1877" height="316" key="GridCell.Tab.0.bottom" timestamp="1590791400674">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1478" height="226" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1590778454399" />
-    <state width="1877" height="228" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1590778898771" />
-    <state width="1877" height="228" key="GridCell.Tab.0.center" timestamp="1590778898771">
+    <state width="1877" height="316" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1590791400674" />
+    <state width="1877" height="316" key="GridCell.Tab.0.center" timestamp="1590791400674">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1478" height="226" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1590778454399" />
-    <state width="1877" height="228" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1590778898771" />
-    <state width="1877" height="228" key="GridCell.Tab.0.left" timestamp="1590778898771">
+    <state width="1877" height="316" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1590791400674" />
+    <state width="1877" height="316" key="GridCell.Tab.0.left" timestamp="1590791400673">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1478" height="226" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1590778454399" />
-    <state width="1877" height="228" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1590778898771" />
-    <state width="1877" height="228" key="GridCell.Tab.0.right" timestamp="1590778898771">
+    <state width="1877" height="316" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1590791400673" />
+    <state width="1877" height="316" key="GridCell.Tab.0.right" timestamp="1590791400674">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1478" height="226" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1590778454399" />
-    <state width="1877" height="228" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1590778898771" />
-    <state width="1478" height="226" key="GridCell.Tab.1.bottom" timestamp="1590778898603">
+    <state width="1877" height="316" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1590791400674" />
+    <state width="1877" height="316" key="GridCell.Tab.1.bottom" timestamp="1590791400674">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1478" height="226" key="GridCell.Tab.1.bottom/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1590778454399" />
-    <state width="1478" height="226" key="GridCell.Tab.1.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1590778898603" />
-    <state width="1478" height="226" key="GridCell.Tab.1.center" timestamp="1590778898602">
+    <state width="1877" height="316" key="GridCell.Tab.1.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1590791400674" />
+    <state width="1877" height="316" key="GridCell.Tab.1.center" timestamp="1590791400674">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1478" height="226" key="GridCell.Tab.1.center/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1590778454399" />
-    <state width="1478" height="226" key="GridCell.Tab.1.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1590778898602" />
-    <state width="1478" height="226" key="GridCell.Tab.1.left" timestamp="1590778898602">
+    <state width="1877" height="316" key="GridCell.Tab.1.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1590791400674" />
+    <state width="1877" height="316" key="GridCell.Tab.1.left" timestamp="1590791400674">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1478" height="226" key="GridCell.Tab.1.left/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1590778454399" />
-    <state width="1478" height="226" key="GridCell.Tab.1.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1590778898602" />
-    <state width="1478" height="226" key="GridCell.Tab.1.right" timestamp="1590778898603">
+    <state width="1877" height="316" key="GridCell.Tab.1.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1590791400674" />
+    <state width="1877" height="316" key="GridCell.Tab.1.right" timestamp="1590791400674">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1478" height="226" key="GridCell.Tab.1.right/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1590778454399" />
-    <state width="1478" height="226" key="GridCell.Tab.1.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1590778898603" />
+    <state width="1877" height="316" key="GridCell.Tab.1.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1590791400674" />
     <state x="440" y="94" key="SettingsEditor" timestamp="1590603194684">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

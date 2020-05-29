@@ -9,7 +9,7 @@ import java.util.UUID;
 
 public class Arena {
 
-    private int id;
+    private String id;
     private String name;
 
     private ArenaState state = ArenaState.WAITING;
@@ -17,14 +17,19 @@ public class Arena {
     private Location spawn;
     private Location lobby;
 
+    //maxplayer
+
+    private int gametime = 180;
+    private int lobbytime = 60;
+
     private List<UUID> players = new ArrayList<UUID>();
     private List<String> dummyplayers = new ArrayList<String>();
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -75,5 +80,21 @@ public class Arena {
 
     public void setLobby(Location lobby) {
         this.lobby = lobby;
+    }
+
+    public int getGametime() {
+        return gametime;
+    }
+
+    public void setGametime(int gametime) {
+        this.gametime = gametime;
+    }
+
+    public int getLobbytime() {
+        return lobbytime;
+    }
+
+    public void setLobbytime(int lobbytime) {
+        this.lobbytime = lobbytime;
     }
 }
