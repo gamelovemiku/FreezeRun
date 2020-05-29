@@ -1,0 +1,8 @@
+name: FreezeRun
+version: 1.0-SNAPSHOT
+main: com.gamelovemiku.freezerun.FreezeRun
+api-version: 1.15
+commands:
+  fr:
+    description: Your description
+    usage: /fr

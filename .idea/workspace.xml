@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="FreezeRun_v1" />
+    </artifacts-to-build>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="2644dd5b-a00c-4d7a-a828-8d75ca8d6158" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="downloadDocsAutomatically" value="true" />
+        <option name="downloadSourcesAutomatically" value="true" />
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="1" />
+  </component>
+  <component name="ProjectId" id="1cV1mmowfVXXPTWZaj660H9GMbM" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../FreezeRun-dev v1.15.2/plugins" />
+    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2974977" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.gamelovemiku.freezerun.events" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JAR Application.Spigot FreezeRun">
+    <configuration name="Spigot FreezeRun" type="JarApplication" singleton="false">
+      <option name="JAR_PATH" value="$PROJECT_DIR$/../FreezeRun-dev v1.15.2/paper.jar" />
+      <option name="WORKING_DIRECTORY" value="G:\FreezeRun-dev v1.15.2" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="ALTERNATIVE_JRE_PATH" value="13" />
+      <module name="FreezeRun" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="JarApplication" singleton="false">
+      <option name="JAR_PATH" value="$PROJECT_DIR$/../FreezeRun-dev v1.15.2/paper.jar" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="ALTERNATIVE_JRE_PATH" value="13" />
+      <method v="2" />
+    </configuration>
+    <configuration name="FreezeRun build" type="MavenRunConfiguration" factoryName="Maven">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="clean" />
+                <option value="package" />
+              </list>
+            </option>
+            <option name="pomFileName" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="JAR Application.Spigot FreezeRun" />
+      <item itemvalue="Maven.FreezeRun build" />
+    </list>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2644dd5b-a00c-4d7a-a828-8d75ca8d6158" name="Default Changelist" comment="" />
+      <created>1590599107856</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1590599107856</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="414" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1590601266820">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="414" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1590601266820" />
+    <state x="709" y="356" key="#com.intellij.ide.actions.ChooseComponentsToExportDialog" timestamp="1590600671798">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="709" y="356" key="#com.intellij.ide.actions.ChooseComponentsToExportDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1590600671798" />
+    <state x="740" y="224" key="#com.intellij.ide.macro.MacrosDialog" timestamp="1590600802308">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="740" y="224" key="#com.intellij.ide.macro.MacrosDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1590600802308" />
+    <state x="765" y="220" key="#com.intellij.ide.util.MemberChooser" timestamp="1590726363767">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="765" y="220" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1590726363767" />
+    <state x="676" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1590719432101">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="676" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1590719432101" />
+    <state x="694" y="281" key="EnvironmentVariablesDialog" timestamp="1590600810630">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="694" y="281" key="EnvironmentVariablesDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1590600810630" />
+    <state x="740" y="274" key="FileChooserDialogImpl" timestamp="1590602703715">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1590602703715" />
+    <state width="1877" height="228" key="GridCell.Tab.0.bottom" timestamp="1590778898771">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1478" height="226" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1590778454399" />
+    <state width="1877" height="228" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1590778898771" />
+    <state width="1877" height="228" key="GridCell.Tab.0.center" timestamp="1590778898771">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1478" height="226" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1590778454399" />
+    <state width="1877" height="228" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1590778898771" />
+    <state width="1877" height="228" key="GridCell.Tab.0.left" timestamp="1590778898771">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1478" height="226" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1590778454399" />
+    <state width="1877" height="228" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1590778898771" />
+    <state width="1877" height="228" key="GridCell.Tab.0.right" timestamp="1590778898771">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1478" height="226" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1590778454399" />
+    <state width="1877" height="228" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1590778898771" />
+    <state width="1478" height="226" key="GridCell.Tab.1.bottom" timestamp="1590778898603">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1478" height="226" key="GridCell.Tab.1.bottom/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1590778454399" />
+    <state width="1478" height="226" key="GridCell.Tab.1.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1590778898603" />
+    <state width="1478" height="226" key="GridCell.Tab.1.center" timestamp="1590778898602">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1478" height="226" key="GridCell.Tab.1.center/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1590778454399" />
+    <state width="1478" height="226" key="GridCell.Tab.1.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1590778898602" />
+    <state width="1478" height="226" key="GridCell.Tab.1.left" timestamp="1590778898602">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1478" height="226" key="GridCell.Tab.1.left/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1590778454399" />
+    <state width="1478" height="226" key="GridCell.Tab.1.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1590778898602" />
+    <state width="1478" height="226" key="GridCell.Tab.1.right" timestamp="1590778898603">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1478" height="226" key="GridCell.Tab.1.right/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1590778454399" />
+    <state width="1478" height="226" key="GridCell.Tab.1.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1590778898603" />
+    <state x="440" y="94" key="SettingsEditor" timestamp="1590603194684">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="440" y="94" key="SettingsEditor/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1590603194684" />
+    <state x="702" y="148" key="refactoring.ChangeSignatureDialog" timestamp="1590602243085">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="702" y="148" key="refactoring.ChangeSignatureDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1590602243085" />
+  </component>
+</project>

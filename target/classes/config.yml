@@ -1,0 +1,17 @@
+# FreezeRun by cyantopinkz / gamelovemiku
+
+msg: TEST FROM CONFIGGGGGGGGGG
+arenas:
+  test1:
+    name: test1_arena
+    locations:
+      lobby:
+        x: -8
+        y: 70
+        z: 7
+      spawn:
+        x: -5
+        y: 70
+        z: 9
+
+
