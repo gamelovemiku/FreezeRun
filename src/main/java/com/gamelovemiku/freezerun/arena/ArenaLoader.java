@@ -21,6 +21,7 @@ public class ArenaLoader {
             Arena arena = new Arena();
             arena.setId(file.getString("arenas." + key + ".id"));
             arena.setName(file.getString("arenas." + key +".name"));
+            arena.setMaxplayer(file.getInt("arenas." + key +".maxplayer"));
             arena.setLobby(new Location(Bukkit.getWorld(file.getString("arenas." + key +".locations.lobby.world")), file.getDouble("arenas." + key +".locations.lobby.x"), file.getDouble("arenas." + key +".locations.lobby.y"), file.getDouble("arenas." + key + ".locations.lobby.z")));
             arena.setSpawn(new Location(Bukkit.getWorld(file.getString("arenas." + key +".locations.spawn.world")), file.getDouble("arenas." + key +".locations.spawn.x"), file.getDouble("arenas." + key +".locations.spawn.y"), file.getDouble("arenas." + key + ".locations.spawn.z")));
 
@@ -42,6 +43,7 @@ public class ArenaLoader {
                 String arenaId = arena.getId();
                 file.set("arenas." + arenaId +".id", arena.getId());
                 file.set("arenas." + arenaId +".name", arena.getName());
+                file.set("arenas." + arenaId +".maxplayer", arena.getMaxplayer());
 
                 file.set("arenas." + arenaId + ".locations.lobby.world", arena.getLobby().getWorld().getName());
                 file.set("arenas." + arenaId + ".locations.lobby.x", arena.getLobby().getX());
@@ -49,11 +51,12 @@ public class ArenaLoader {
                 file.set("arenas." + arenaId + ".locations.lobby.z", arena.getLobby().getZ());
 
                 file.set("arenas." + arenaId + ".locations.spawn.world", arena.getSpawn().getWorld().getName());
-                file.set("arenas." + arenaId + ".locations.spawn.x", arena.getLobby().getX());
-                file.set("arenas." + arenaId + ".locations.spawn.y", arena.getLobby().getY());
-                file.set("arenas." + arenaId + ".locations.spawn.z", arena.getLobby().getZ());
+                file.set("arenas." + arenaId + ".locations.spawn.x", arena.getSpawn().getX());
+                file.set("arenas." + arenaId + ".locations.spawn.y", arena.getSpawn().getY());
+                file.set("arenas." + arenaId + ".locations.spawn.z", arena.getSpawn().getZ());
 
                 file.set("arenas." + arenaId + ".lobbytime", arena.getLobbytime());
+                file.set("arenas." + arenaId + ".preparetime", arena.getGametime());
                 file.set("arenas." + arenaId + ".gametime", arena.getGametime());
             }
         });

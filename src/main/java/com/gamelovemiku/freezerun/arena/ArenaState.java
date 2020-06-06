@@ -2,8 +2,10 @@ package com.gamelovemiku.freezerun.arena;
 
 public enum ArenaState {
     WAITING,
+    PREPARING,
     PLAYING,
     FINAL_ROUND,
-    FINISHING,
-    FINISHED
+    FINISHED,
+    AFTER_GAME
+
 }

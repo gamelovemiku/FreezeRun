@@ -2,10 +2,10 @@ package com.gamelovemiku.freezerun.arena;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
+import org.bukkit.entity.Player;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.UUID;
 
 public class Arena {
 
@@ -17,13 +17,16 @@ public class Arena {
     private Location spawn;
     private Location lobby;
 
-    //maxplayer
+    private int freezecount = 0;
+    private int maxplayer = 4;
 
-    private int gametime = 180;
     private int lobbytime = 60;
+    private int gametime = 180;
+    private int preparetime = 15;
 
-    private List<UUID> players = new ArrayList<UUID>();
-    private List<String> dummyplayers = new ArrayList<String>();
+    private boolean isStartLobbyCountDown = false;
+
+    private List<Player> players = new ArrayList<Player>();
 
     public String getId() {
         return id;
@@ -49,20 +52,12 @@ public class Arena {
         this.spawn = spawn;
     }
 
-    public List<UUID> getPlayers() {
+    public List<Player> getPlayers() {
         return players;
     }
 
-    public void setPlayers(List<UUID> players) {
+    public void setPlayers(List<Player> players) {
         this.players = players;
-    }
-
-    public List<String> getDummyplayers() {
-        return dummyplayers;
-    }
-
-    public void setDummyplayers(List<String> dummyplayers) {
-        this.dummyplayers = dummyplayers;
     }
 
     public ArenaState getState() {
@@ -71,7 +66,7 @@ public class Arena {
 
     public void setState(ArenaState state) {
         this.state = state;
-        Bukkit.broadcastMessage("Set state of " + getName() + " to " + getState().toString());
+        //Bukkit.broadcastMessage("Set state of " + getName() + " to " + getState().toString());
     }
 
     public Location getLobby() {
@@ -80,6 +75,22 @@ public class Arena {
 
     public void setLobby(Location lobby) {
         this.lobby = lobby;
+    }
+
+    public int getMaxplayer() {
+        return maxplayer;
+    }
+
+    public void setMaxplayer(int maxplayer) {
+        this.maxplayer = maxplayer;
+    }
+
+    public int getPreparetime() {
+        return preparetime;
+    }
+
+    public void setPreparetime(int preparetime) {
+        this.preparetime = preparetime;
     }
 
     public int getGametime() {
@@ -96,5 +107,18 @@ public class Arena {
 
     public void setLobbytime(int lobbytime) {
         this.lobbytime = lobbytime;
+    }
+
+    public int getFreezecount() {
+        return freezecount;
+    }
+
+    public void setFreezecount(int freezecount) {
+        this.freezecount = freezecount;
+    }
+
+    public void reset(int lobbytime, int gametime) {
+        this.lobbytime = lobbytime;
+        this.gametime = gametime;
     }
 }

@@ -1,15 +1,10 @@
 package com.gamelovemiku.freezerun;
 
-import com.gamelovemiku.freezerun.arena.ArenaLoader;
 import com.gamelovemiku.freezerun.command.GameCMD;
 import com.gamelovemiku.freezerun.listeners.FreezeRunListener;
-import com.gamelovemiku.freezerun.listeners.TestListener;
-import com.gamelovemiku.freezerun.player.PlayerState;
+import com.gamelovemiku.freezerun.listeners.GeneralListener;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
-
-import java.util.HashMap;
-import java.util.UUID;
 
 public class FreezeRun extends JavaPlugin {
 
@@ -31,11 +26,9 @@ public class FreezeRun extends JavaPlugin {
         saveDefaultConfig();
 
         getServer().getPluginManager().registerEvents(new FreezeRunListener(), this);
-        getServer().getPluginManager().registerEvents(new TestListener(), this);
+        getServer().getPluginManager().registerEvents(new GeneralListener(), this);
 
         this.getCommand("fr").setExecutor(new GameCMD());
-
-        new ArenaLoader().loadArenas();
 
     }
 

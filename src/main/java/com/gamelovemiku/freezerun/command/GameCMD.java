@@ -10,11 +10,7 @@ import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
-import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.entity.Player;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class GameCMD implements CommandExecutor {
 
@@ -36,15 +32,6 @@ public class GameCMD implements CommandExecutor {
 
                 new ArenaLoader().loadArenas();
 
-                //sender.sendMessage(ChatColor.GOLD + FreezeRun.getInstance().getConfig().getList("items.item1").toString());
-                /*
-                ConfigurationSection sec = FreezeRun.getInstance().getConfig().getConfigurationSection("arenas");
-                for(String key : sec.getKeys(false)){
-                    String name = FreezeRun.getInstance().getConfig().getString("arenas." + key + ".name");
-                    FreezeRun.getInstance().getConfig().set("arenas.test3.name", "HEY HEY");
-                    FreezeRun.getInstance().saveConfig();
-                    sender.sendMessage(name);
-                }*/
                 return true;
             }
             if(args[0].equalsIgnoreCase("reload")) {
@@ -54,21 +41,15 @@ public class GameCMD implements CommandExecutor {
             }
             if(args[0].equalsIgnoreCase("aio")) {
                 arenaManager.listDummyPlayer(args[1]);
-                arenaManager.join(p.getName(), args[1]);
+                arenaManager.join(p, args[1]);
                 arenaManager.startOver(args[1]);
                 p.sendMessage("----------------------- AFTER -------------------");
                 arenaManager.listDummyPlayer(args[1]);
                 return true;
             }
-            if(args[0].equalsIgnoreCase("help")) {
-                sender.sendMessage(ChatColor.GOLD + "FreezeRun Command Usage");
-                sender.sendMessage(ChatColor.GRAY + "/fr - The main command");
-                sender.sendMessage(ChatColor.GRAY + "/fr help - Shows this message.");
-                sender.sendMessage(ChatColor.GRAY + "/fr add <Name> - Create an arena");
-                sender.sendMessage(ChatColor.GRAY + "/fr delete <Name> - Delete an arena");
-                sender.sendMessage(ChatColor.GRAY + "/fr setlobby <Name> - Set the lobby for an arena");
-                sender.sendMessage(ChatColor.GRAY + "/fr setspawn <Name> - Set the spawn for an arena");
-                sender.sendMessage(ChatColor.GRAY + "/fr setmainlobby - Set the main lobby");
+            if(args[0].equalsIgnoreCase("load")) {
+                ArenaManager.getArenaList().clear();
+                new ArenaLoader().loadArenas();
                 return true;
             }
             if(args[0].equalsIgnoreCase("cps")) {
@@ -126,7 +107,7 @@ public class GameCMD implements CommandExecutor {
                 return true;
             }
             if(args[0].equalsIgnoreCase("spawn")) {
-                arenaManager.spawnToGame(p.getName());
+                arenaManager.spawnToGame(p);
                 sender.sendMessage(ChatColor.GOLD + "You are in spawn.");
                 return true;
             }
@@ -136,7 +117,7 @@ public class GameCMD implements CommandExecutor {
                 return true;
             }
             if(args[0].equalsIgnoreCase("lobby")) {
-                arenaManager.spawnToLobby(p.getName());
+                arenaManager.spawnToLobby(p);
                 sender.sendMessage(ChatColor.GOLD + "You are back to spawn");
                 return true;
             }
@@ -145,23 +126,13 @@ public class GameCMD implements CommandExecutor {
                 return true;
             }
             if(args[0].equalsIgnoreCase("join")) { //add warp to lobby
-                arenaManager.join(p.getName(), args[1]);
+                arenaManager.join(p, args[1]);
                 //sender.sendMessage(ChatColor.GOLD + "You joined: " + args[1]);
                 return true;
             }
             if(args[0].equalsIgnoreCase("leave")) {
-                arenaManager.leave(p.getName(), args[1]);
+                arenaManager.leave(p);
                 //sender.sendMessage(ChatColor.GOLD + "You leaved: " + args[1]);
-                return true;
-            }
-            if(args[0].equalsIgnoreCase("adddummy")) {
-                arenaManager.addDummyPlayer(args[1], args[2]);
-                sender.sendMessage(ChatColor.GOLD + "Added dummy " + args[1] + " to arena #" + args[2]);
-                return true;
-            }
-            if(args[0].equalsIgnoreCase("removedummy")) {
-                arenaManager.removeDummyPlayer(args[1], args[2]);
-                sender.sendMessage(ChatColor.GOLD + "Removed dummy " + args[1] + " from arena #" + args[2]);
                 return true;
             }
             if(args[0].equalsIgnoreCase("setstate")) {
@@ -178,7 +149,11 @@ public class GameCMD implements CommandExecutor {
                 return true;
             }
             if(args[0].equalsIgnoreCase("mygame")) {
-                p.sendMessage("You playing in " + new PlayerManager().findArena(p.getName()).getName());
+                p.sendMessage("You playing in " + new PlayerManager().findArena(p).getName());
+                return true;
+            }
+            if(args[0].equalsIgnoreCase("autojoin")) {
+                new PlayerManager().autoJoin(p);
                 return true;
             }
             sender.sendMessage(ChatColor.RED + "Unknown subcommand.");
